@@ -4,20 +4,47 @@
     --menu-height: 40px;
 }
 
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-div {
+
+.outer-container {
+    padding: 70px 0 70px 0;
+}
+
+.outer-container:hover .menu {
+    background-color: transparent;
+}
+
+.outer-container:hover .menu::before {
+    transform: rotate(45deg);
+    top: 0;
+
+}
+
+.outer-container:hover .menu::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}
+
+.menu {
     position: relative;
     background-color: var(--main-menu-colour);
     width: var(--menu-width);
     height: var(--menu-height);
+    transition: all 0.15s ease-in-out;
 }
 
-div::before {
+.menu::before {
     content: "";
     display: block;
     position: absolute;
@@ -25,14 +52,17 @@ div::before {
     width: var(--menu-width);
     height: var(--menu-height);
     top: 70px;
+    transition: all 0.35s ease-in-out;
 }
 
-div::after {
+.menu::after {
     content: "";
     display: block;
     position: absolute;
     width: var(--menu-width);
     height: var(--menu-height);
     background-color: var(--main-menu-colour);
+    transition: all 0.35s ease-in-out;
     bottom: 70px;
 }
+
