@@ -1,0 +1,38 @@
+:root {
+    --main-menu-colour: #D84282;
+    --menu-width: 300px;
+    --menu-height: 40px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+div {
+    position: relative;
+    background-color: var(--main-menu-colour);
+    width: var(--menu-width);
+    height: var(--menu-height);
+}
+
+div::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: var(--main-menu-colour);
+    width: var(--menu-width);
+    height: var(--menu-height);
+    top: 70px;
+}
+
+div::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: var(--menu-width);
+    height: var(--menu-height);
+    background-color: var(--main-menu-colour);
+    bottom: 70px;
+}
